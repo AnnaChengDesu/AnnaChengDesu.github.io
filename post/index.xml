@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Anna.me</title>
-    <link>https://github.com/post/</link>
+    <link>https://annachengdesu.github.io/post/</link>
     <description>Recent content in Posts on Anna.me</description>
     <image>
       <title>Anna.me</title>
-      <url>https://github.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://github.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Feb 2023 14:08:56 +0800</lastBuildDate><atom:link href="https://github.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Feb 2023 14:08:56 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript练习题：30天LeetCode挑战（day1 to day7）</title>
-      <link>https://github.com/post/ts-test-30-days/day1to7/</link>
+      <link>https://annachengdesu.github.io/post/ts-test-30-days/day1to7/</link>
       <pubDate>Mon, 20 Feb 2023 14:08:56 +0800</pubDate>
       
-      <guid>https://github.com/post/ts-test-30-days/day1to7/</guid>
+      <guid>https://annachengdesu.github.io/post/ts-test-30-days/day1to7/</guid>
       <description>LeetCode 挑战题目汇总地址： 30 Days of JavaScript Challenge
 DAY1: Create Hello World Function 解题代码： function createHelloWorld() { return function(...args): string { return &amp;#34;Hello World&amp;#34; }; }; 官方解題說明
 https://leetcode.com/problems/create-hello-world-function/editorial/

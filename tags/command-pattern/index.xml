@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Command Pattern on Anna.me</title>
+    <link>https://annachengdesu.github.io/tags/command-pattern/</link>
+    <description>Recent content in Command Pattern on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://annachengdesu.github.io/tags/command-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01-Command Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/command-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/command-pattern/</guid>
+      <description>Command Pattern 命令模式 使用命令模式，可以将执行某个任务的对象与调用该方法的对象解耦。
+假设有一个外卖配送平台。用户可以下单、跟踪和取消订单。
+class OrderManager() { constructor() { this.orders = [] } placeOrder(order, id) { this.orders.push(id) return `You have successfully ordered ${order} (${id})`; } trackOrder(id) { return `Your order ${id} will arrive in 20 minutes.` } cancelOrder(id) { this.orders = this.orders.filter(order =&amp;gt; order.id !== id) return `You have canceled your order ${id}` } } 在 OrderManager 类上，可以访问 placeOrder 、 trackOrder 和 cancelOrder 方法。直接使用这些方法将是完全可行的。
+但是，直接在 manager 实例上调用方法也有缺点。我们可能会决定稍后重命名某些方法，或者改变某些方法的功能。
+假设现在将其重命名为 addOrder ，而不是 placeOrder ，这意味着我们必须确保代码库中的没有任何位置调用 placeOrder 方法，这种场景在大型应用程序中可能非常棘手。相反，我们希望将方法与 manager 对象解耦，并为每个命令创建单独的命令函数。</description>
+    </item>
+    
+  </channel>
+</rss>

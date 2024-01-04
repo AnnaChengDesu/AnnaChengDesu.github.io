@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mixin on Anna.me</title>
+    <link>https://annachengdesu.github.io/tags/mixin/</link>
+    <description>Recent content in Mixin on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Mar 2023 19:46:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/mixin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>04-Mixin Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
+      <pubDate>Thu, 16 Mar 2023 19:46:32 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/minin-pattern/</guid>
+      <description>Mixin Pattern 混合模式 mixin 是一个对象，我们可以使用它向另一个对象或类添加可重用的功能，而无需使用继承。我们不能单独使用 mixin：它们的唯一目的是在没有继承的情况下向对象或类添加功能。
+假设我们的应用程序需要创建多只狗。然而，我们创建的基本狗除了 name 属性之外没有任何属性。
+class Dog { constructor(name) { this.name = name; } } 狗应该能够做的不仅仅是有名字。它应该能够吠叫、摇尾巴和玩耍！我们可以创建一个 mixin 来为我们提供 bark 、 wagTail 和 play 属性，而不是直接将其添加到 Dog 中。
+const dogFunctionality = { bark: () =&amp;gt; console.log(&amp;#34;Woof!&amp;#34;), wagTail: () =&amp;gt; console.log(&amp;#34;Wagging my tail!&amp;#34;), play: () =&amp;gt; console.log(&amp;#34;Playing!&amp;#34;), }; 我们可以使用 Object.assign 方法将 dogFunctionality mixin 添加到 Dog 原型中。此方法允许我们向目标对象添加属性：在本例中为 Dog.prototype 。 Dog 的每个新实例都可以访问 dogFunctionality 的属性，因为它们被添加到 Dog 的原型中。
+class Dog { constructor(name) { this.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,11 +10,12 @@
       <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://annachengdesu.github.io/tags/command-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Mar 2023 21:21:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/command-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>01-Command Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/command-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 12 Mar 2023 21:21:32 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/command-pattern/</guid>
       <description>Command Pattern 命令模式 使用命令模式，可以将执行某个任务的对象与调用该方法的对象解耦。

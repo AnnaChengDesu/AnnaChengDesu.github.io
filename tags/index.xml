@@ -11,7 +11,61 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Feb 2023 14:08:56 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Apr 2023 21:13:09 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript</title>
+      <link>https://annachengdesu.github.io/tags/javascript/</link>
+      <pubDate>Thu, 06 Apr 2023 21:13:09 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observer</title>
+      <link>https://annachengdesu.github.io/tags/observer/</link>
+      <pubDate>Thu, 06 Apr 2023 21:13:09 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/observer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Middleware Pattern</title>
+      <link>https://annachengdesu.github.io/tags/middleware-pattern/</link>
+      <pubDate>Thu, 16 Mar 2023 19:46:32 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/middleware-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mixin</title>
+      <link>https://annachengdesu.github.io/tags/mixin/</link>
+      <pubDate>Thu, 16 Mar 2023 19:46:32 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/mixin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Factory Pattern</title>
+      <link>https://annachengdesu.github.io/tags/factory-pattern/</link>
+      <pubDate>Wed, 15 Mar 2023 23:19:26 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/factory-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command Pattern</title>
+      <link>https://annachengdesu.github.io/tags/command-pattern/</link>
+      <pubDate>Sun, 12 Mar 2023 21:21:32 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/tags/command-pattern/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>LeetCode</title>
       <link>https://annachengdesu.github.io/tags/leetcode/</link>
@@ -27,42 +81,6 @@
       <pubDate>Mon, 20 Feb 2023 14:08:56 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/tags/typescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command Pattern</title>
-      <link>https://annachengdesu.github.io/tags/command-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://annachengdesu.github.io/tags/command-pattern/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Factory Pattern</title>
-      <link>https://annachengdesu.github.io/tags/factory-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://annachengdesu.github.io/tags/factory-pattern/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://annachengdesu.github.io/tags/javascript/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://annachengdesu.github.io/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Middleware Pattern</title>
-      <link>https://annachengdesu.github.io/tags/middleware-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://annachengdesu.github.io/tags/middleware-pattern/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Observer on Anna.me</title>
+    <link>https://annachengdesu.github.io/tags/observer/</link>
+    <description>Recent content in Observer on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Apr 2023 21:13:09 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/observer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>05-Observer Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/observer-pattern/</link>
+      <pubDate>Thu, 06 Apr 2023 21:13:09 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/observer-pattern/</guid>
+      <description>Observer Pattern 观察者模式 通过观察者模式，我们可以将某些对象（观察者）订阅到另一个称为可观察对象的对象。每当事件发生时，可观察者都会通知其所有观察者。
+一个可观察对象通常包含 3 个重要部分：
+observers ：观察者数组，每当特定事件发生时都会收到通知
+subscribe() ：将观察者添加到观察者列表的方法
+unsubscribe() ：从观察者列表中删除观察者的方法
+notify() ：每当特定事件发生时通知所有观察者的方法
+创建一个简单的方法是使用 ES6 类。
+class Observable { constructor() { this.observers = []; } subscribe(func) { this.observers.push(func); } unsubscribe(func) { this.observers = this.observers.filter((observer) =&amp;gt; observer !== func); } notify(data) { this.observers.forEach((observer) =&amp;gt; observer(data)); } } 我们现在可以使用 subscribe 方法将观察者添加到观察者列表中，使用 unsubscribe 方法删除观察者，并使用 notify 方法通知所有订阅者。
+现在我们有一个非常基本的应用程序，仅包含两个组件： Button 和 Switch 。
+export default function App() { return ( &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;Button&amp;gt;Click me!</description>
+    </item>
+    
+  </channel>
+</rss>

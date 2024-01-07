@@ -11,11 +11,11 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Apr 2023 21:13:09 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/observer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 21:13:09 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/observer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>05-Observer Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/observer-pattern/</link>
-      <pubDate>Thu, 06 Apr 2023 21:13:09 +0800</pubDate>
+      <pubDate>Sat, 05 Aug 2023 21:13:09 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/observer-pattern/</guid>
       <description>Observer Pattern 观察者模式 通过观察者模式，我们可以将某些对象（观察者）订阅到另一个称为可观察对象的对象。每当事件发生时，可观察者都会通知其所有观察者。

@@ -11,11 +11,11 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Mar 2023 19:46:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/mixin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 19:46:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/mixin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>04-Mixin Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
-      <pubDate>Thu, 16 Mar 2023 19:46:32 +0800</pubDate>
+      <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/minin-pattern/</guid>
       <description>Mixin Pattern 混合模式 mixin 是一个对象，我们可以使用它向另一个对象或类添加可重用的功能，而无需使用继承。我们不能单独使用 mixin：它们的唯一目的是在没有继承的情况下向对象或类添加功能。

@@ -43,6 +43,20 @@ let counter = 0; class Counter { getInstance() { return this; } getCount() { ret
     </item>
     
     <item>
+      <title>07-Prototype Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/prototype/</link>
+      <pubDate>Sat, 05 Aug 2023 21:13:09 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/prototype/</guid>
+      <description>Prototype Pattern 原型模式 原型模式是在同一类型的许多对象之间共享属性的有用方法。原型是 JavaScript 原生的对象，可以通过原型链被对象访问。
+在我们的应用程序中，我们经常需要创建许多相同类型的对象。想要达到此目的可以通过 ES6 类创建多个实例。
+假设我们想创造很多狗，他们有一个名字，并且它们可以吠叫。
+class Dog { constructor(name) { this.name = name; } bark() { return `Woof!`; } } const dog1 = new Dog(&amp;#34;Daisy&amp;#34;); const dog2 = new Dog(&amp;#34;Max&amp;#34;); const dog3 = new Dog(&amp;#34;Spot&amp;#34;); 请注意这里 constructor 如何包含 name 属性，并且类本身如何包含 bark 属性。使用 ES6 类时，类本身定义的所有属性（在本例中为 bark ）都会自动添加到 prototype 中。
+我们可以通过访问构造函数上的 prototype 属性或通过任何实例上的 __proto__ 属性直接查看 prototype 。
+console.log(Dog.prototype); // constructor: ƒ Dog(name, breed) bark: ƒ bark() console.log(dog1.__proto__); // constructor: ƒ Dog(name, breed) bark: ƒ bark() 构造函数的任何实例上的 __proto__ 值都是对构造函数原型的直接引用。每当我们尝试直接访问对象上不存在的对象属性时，JavaScript 就会沿着原型链向下查找该属性在原型链中是否可用。</description>
+    </item>
+    
+    <item>
       <title>04-Mixin Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
       <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
@@ -53,6 +67,21 @@ let counter = 0; class Counter { getInstance() { return this; } getCount() { ret
 class Dog { constructor(name) { this.name = name; } } 狗应该能够做的不仅仅是有名字。它应该能够吠叫、摇尾巴和玩耍！我们可以创建一个 mixin 来为我们提供 bark 、 wagTail 和 play 属性，而不是直接将其添加到 Dog 中。
 const dogFunctionality = { bark: () =&amp;gt; console.log(&amp;#34;Woof!&amp;#34;), wagTail: () =&amp;gt; console.log(&amp;#34;Wagging my tail!&amp;#34;), play: () =&amp;gt; console.log(&amp;#34;Playing!&amp;#34;), }; 我们可以使用 Object.assign 方法将 dogFunctionality mixin 添加到 Dog 原型中。此方法允许我们向目标对象添加属性：在本例中为 Dog.prototype 。 Dog 的每个新实例都可以访问 dogFunctionality 的属性，因为它们被添加到 Dog 的原型中。
 class Dog { constructor(name) { this.</description>
+    </item>
+    
+    <item>
+      <title>08-Module Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/module/</link>
+      <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/module/</guid>
+      <description>Module Pattern 模块模式 随着应用程序和代码库的增长，保持代码的可维护性和独立性变得越来越重要。模块模式使得代码分割成更小的、可重用的部分。
+除了此之外，模块还允许您将文件中的某些值保持为私有。默认情况下，模块内的声明的范围到该模块。如果我们不显式导出某个值，则该值在该模块之外不可用。这降低了代码库其他部分中声明的值发生名称冲突的风险，因为这些值在全局范围内不可用。
+ES2015 Modules ES2015 引入了内置 JavaScript 模块。模块是包含 JavaScript 代码的文件，与普通脚本相比，其行为存在一些差异。
+让我们看一个名为 math.js 的模块示例，其中包含数学函数。
+function add(x, y) { return x + y; } function multiply(x) { return x * 2; } function subtract(x, y) { return x - y; } function square(x) { return x * x; } 函数允许用户进行加法、乘法、减法以及获取他们传递的值的平方。
+但是，我们不仅仅想在 math.js 文件中使用这些函数，我们希望能够在 index.js 文件中引用它们。但是直接在 index.js 文件内调用会抛出错误： index.js 文件中没有名为 add 、 subtract 、 multiply 或 square 。
+为了使 math.js 中的函数可用于其他文件，我们首先必须将它们导出。为了从模块导出代码，我们可以使用 export 关键字。导出函数的一种方法是使用命名导出：我们只需在可公开的部分前面添加 export 关键字。在这种情况下，我们需要在每个函数前面添加 export 关键字，因为 index.</description>
     </item>
     
     <item>

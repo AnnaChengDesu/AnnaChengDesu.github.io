@@ -11,7 +11,75 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Aug 2023 21:13:09 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Oct 2023 23:09:38 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>设计模式汇总及学习心得总结</title>
+      <link>https://annachengdesu.github.io/post/patterns/summary/</link>
+      <pubDate>Thu, 05 Oct 2023 23:09:38 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/summary/</guid>
+      <description>设计模式汇总及学习心得总结 ​ 设计模式是针对软件设计中反复出现的问题所提出的通用解决方案。它们是在大量实际软件开发经验中总结出的优秀设计实践，描述了在特定场景下解决问题的方法和思路。设计模式旨在提高代码的可复用性、可扩展性和可维护性，使软件具有更好的灵活性和稳定性。因此学习设计模式对于个人代码水平提升十分重要。
+设计模式的重要性主要体现在以下几个方面：
+高效解决问题：设计模式为软件设计中常见问题提供了成熟、可靠的解决方案，使开发者能够更高效地解决问题，避免重复发明轮子。 促进代码复用：设计模式是通用的设计结构，可以在不同的场景和项目中复用，提高了代码的可复用性，减少了开发时间和成本。 提高代码质量：设计模式强调模块间的低耦合、高内聚，有助于提高代码的可读性、可维护性和稳定性，降低了软件的错误率。 促进团队协作：设计模式提供了一套通用的设计语言，使得团队成员在交流和理解代码时能够更加顺畅，提高了团队协作效率。 有益于个人成长：学习和熟练运用设计模式有助于提高开发者的设计能力和编程水平，使得开发者能够在面对复杂问题时更加从容应对。 以下为模式学习笔记汇总：
+Vanilla 篇 Command pattern 命令模式
+命令模式是将方法（命令）从执行操作的对象中解耦，可以到特定时间或特定生命周期再执行命令。
+Factory pattern 工厂模式
+工厂模式是函数不通过使用 new 关键字来返回一个新对象。
+Mediator/middleware pattern 中间件模式
+中间件模式使得组件可以通过一个中心点（中介者）相互交互。中间件接收请求并将其转发，使我们能够轻松简化对象之间的多对多关系。
+Observer pattern 观察者模式
+通过观察者模式，可以将某些对象（observers观察者）订阅到另一个的对象（observable可观察对象)。每当事件发生时，可观察者都会通知其所有观察者。
+Minin pattern 混合模式
+Mixins 允许我们通过将功能注入到对象的原型中，轻松地向对象添加功能，而无需继承。（不推荐使用）
+Singleton pattern 单例模式
+实现单例模式是实现只能实例化一次并可以全局访问的类。
+Prototype pattern 原型模式
+原型模式是通过原型链继承的方式使得相同类型的的对象之间共享属性。
+Module Pattern 模块模式
+通过 ES Module 来防止名称冲突和全局范围污染。导出用 export，导入用 import module from path 。</description>
+    </item>
+    
+    <item>
+      <title>08-Module Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/module/</link>
+      <pubDate>Fri, 18 Aug 2023 17:34:08 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/module/</guid>
+      <description>Module Pattern 模块模式 随着应用程序和代码库的增长，保持代码的可维护性和独立性变得越来越重要。模块模式使得代码分割成更小的、可重用的部分。
+除了此之外，模块还允许您将文件中的某些值保持为私有。默认情况下，模块内的声明的范围到该模块。如果我们不显式导出某个值，则该值在该模块之外不可用。这降低了代码库其他部分中声明的值发生名称冲突的风险，因为这些值在全局范围内不可用。
+ES2015 Modules ES2015 引入了内置 JavaScript 模块。模块是包含 JavaScript 代码的文件，与普通脚本相比，其行为存在一些差异。
+让我们看一个名为 math.js 的模块示例，其中包含数学函数。
+function add(x, y) { return x + y; } function multiply(x) { return x * 2; } function subtract(x, y) { return x - y; } function square(x) { return x * x; } 函数允许用户进行加法、乘法、减法以及获取他们传递的值的平方。
+但是，我们不仅仅想在 math.js 文件中使用这些函数，我们希望能够在 index.js 文件中引用它们。但是直接在 index.js 文件内调用会抛出错误： index.js 文件中没有名为 add 、 subtract 、 multiply 或 square 。
+为了使 math.js 中的函数可用于其他文件，我们首先必须将它们导出。为了从模块导出代码，我们可以使用 export 关键字。导出函数的一种方法是使用命名导出：我们只需在可公开的部分前面添加 export 关键字。在这种情况下，我们需要在每个函数前面添加 export 关键字，因为 index.</description>
+    </item>
+    
+    <item>
+      <title>07-Prototype Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/prototype/</link>
+      <pubDate>Mon, 14 Aug 2023 20:06:34 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/prototype/</guid>
+      <description>Prototype Pattern 原型模式 原型模式是在同一类型的许多对象之间共享属性的有用方法。原型是 JavaScript 原生的对象，可以通过原型链被对象访问。
+在我们的应用程序中，我们经常需要创建许多相同类型的对象。想要达到此目的可以通过 ES6 类创建多个实例。
+假设我们想创造很多狗，他们有一个名字，并且它们可以吠叫。
+class Dog { constructor(name) { this.name = name; } bark() { return `Woof!`; } } const dog1 = new Dog(&amp;#34;Daisy&amp;#34;); const dog2 = new Dog(&amp;#34;Max&amp;#34;); const dog3 = new Dog(&amp;#34;Spot&amp;#34;); 请注意这里 constructor 如何包含 name 属性，并且类本身如何包含 bark 属性。使用 ES6 类时，类本身定义的所有属性（在本例中为 bark ）都会自动添加到 prototype 中。
+我们可以通过访问构造函数上的 prototype 属性或通过任何实例上的 __proto__ 属性直接查看 prototype 。
+console.log(Dog.prototype); // constructor: ƒ Dog(name, breed) bark: ƒ bark() console.log(dog1.__proto__); // constructor: ƒ Dog(name, breed) bark: ƒ bark() 构造函数的任何实例上的 __proto__ 值都是对构造函数原型的直接引用。每当我们尝试直接访问对象上不存在的对象属性时，JavaScript 就会沿着原型链向下查找该属性在原型链中是否可用。</description>
+    </item>
+    
+    <item>
+      <title>06-Singleton Pattern-设计模式学习-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/singleton/</link>
+      <pubDate>Sat, 12 Aug 2023 12:05:59 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/singleton/</guid>
+      <description>Singleton Pattern 单例模式 单例是可以实例化一次并可以全局访问的类。单一实例可以在我们的应用程序中共享，这使得单例非常适合管理应用程序中的全局状态。
+首先，看一下使用 ES2015 类的单例是什么样子。对于这个例子，我们将构建一个 Counter 类，它具有：
+返回实例值的 getInstance 方法 返回 counter 变量当前值的 getCount 方法 将 counter 的值增加 1 的 increment 方法 将 counter 的值减一的 decrement 方法 let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } 然而，这个类不符合 Singleton 的标准。 Singleton 应该只能被实例化一次。目前，我们可以创建 Counter 类的多个实例。
+let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } const counter1 = new Counter(); const counter2 = new Counter(); console.</description>
+    </item>
+    
     <item>
       <title>05-Observer Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/observer-pattern/</link>
@@ -31,32 +99,6 @@ export default function App() { return ( &amp;lt;div className=&amp;#34;App&amp;
     </item>
     
     <item>
-      <title>06-Singleton Pattern-设计模式学习-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/singleton/</link>
-      <pubDate>Sat, 05 Aug 2023 21:13:09 +0800</pubDate>
-      
-      <guid>https://annachengdesu.github.io/post/patterns/singleton/</guid>
-      <description>Singleton Pattern 单例模式 单例是可以实例化一次并可以全局访问的类。单一实例可以在我们的应用程序中共享，这使得单例非常适合管理应用程序中的全局状态。
-首先，看一下使用 ES2015 类的单例是什么样子。对于这个例子，我们将构建一个 Counter 类，它具有：
-返回实例值的 getInstance 方法 返回 counter 变量当前值的 getCount 方法 将 counter 的值增加 1 的 increment 方法 将 counter 的值减一的 decrement 方法 let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } 然而，这个类不符合 Singleton 的标准。 Singleton 应该只能被实例化一次。目前，我们可以创建 Counter 类的多个实例。
-let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } const counter1 = new Counter(); const counter2 = new Counter(); console.</description>
-    </item>
-    
-    <item>
-      <title>07-Prototype Pattern-设计模式学习-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/prototype/</link>
-      <pubDate>Sat, 05 Aug 2023 21:13:09 +0800</pubDate>
-      
-      <guid>https://annachengdesu.github.io/post/patterns/prototype/</guid>
-      <description>Prototype Pattern 原型模式 原型模式是在同一类型的许多对象之间共享属性的有用方法。原型是 JavaScript 原生的对象，可以通过原型链被对象访问。
-在我们的应用程序中，我们经常需要创建许多相同类型的对象。想要达到此目的可以通过 ES6 类创建多个实例。
-假设我们想创造很多狗，他们有一个名字，并且它们可以吠叫。
-class Dog { constructor(name) { this.name = name; } bark() { return `Woof!`; } } const dog1 = new Dog(&amp;#34;Daisy&amp;#34;); const dog2 = new Dog(&amp;#34;Max&amp;#34;); const dog3 = new Dog(&amp;#34;Spot&amp;#34;); 请注意这里 constructor 如何包含 name 属性，并且类本身如何包含 bark 属性。使用 ES6 类时，类本身定义的所有属性（在本例中为 bark ）都会自动添加到 prototype 中。
-我们可以通过访问构造函数上的 prototype 属性或通过任何实例上的 __proto__ 属性直接查看 prototype 。
-console.log(Dog.prototype); // constructor: ƒ Dog(name, breed) bark: ƒ bark() console.log(dog1.__proto__); // constructor: ƒ Dog(name, breed) bark: ƒ bark() 构造函数的任何实例上的 __proto__ 值都是对构造函数原型的直接引用。每当我们尝试直接访问对象上不存在的对象属性时，JavaScript 就会沿着原型链向下查找该属性在原型链中是否可用。</description>
-    </item>
-    
-    <item>
       <title>04-Mixin Pattern-设计模式学习-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
       <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
@@ -67,21 +109,6 @@ console.log(Dog.prototype); // constructor: ƒ Dog(name, breed) bark: ƒ bark() 
 class Dog { constructor(name) { this.name = name; } } 狗应该能够做的不仅仅是有名字。它应该能够吠叫、摇尾巴和玩耍！我们可以创建一个 mixin 来为我们提供 bark 、 wagTail 和 play 属性，而不是直接将其添加到 Dog 中。
 const dogFunctionality = { bark: () =&amp;gt; console.log(&amp;#34;Woof!&amp;#34;), wagTail: () =&amp;gt; console.log(&amp;#34;Wagging my tail!&amp;#34;), play: () =&amp;gt; console.log(&amp;#34;Playing!&amp;#34;), }; 我们可以使用 Object.assign 方法将 dogFunctionality mixin 添加到 Dog 原型中。此方法允许我们向目标对象添加属性：在本例中为 Dog.prototype 。 Dog 的每个新实例都可以访问 dogFunctionality 的属性，因为它们被添加到 Dog 的原型中。
 class Dog { constructor(name) { this.</description>
-    </item>
-    
-    <item>
-      <title>08-Module Pattern-设计模式学习-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/module/</link>
-      <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
-      
-      <guid>https://annachengdesu.github.io/post/patterns/module/</guid>
-      <description>Module Pattern 模块模式 随着应用程序和代码库的增长，保持代码的可维护性和独立性变得越来越重要。模块模式使得代码分割成更小的、可重用的部分。
-除了此之外，模块还允许您将文件中的某些值保持为私有。默认情况下，模块内的声明的范围到该模块。如果我们不显式导出某个值，则该值在该模块之外不可用。这降低了代码库其他部分中声明的值发生名称冲突的风险，因为这些值在全局范围内不可用。
-ES2015 Modules ES2015 引入了内置 JavaScript 模块。模块是包含 JavaScript 代码的文件，与普通脚本相比，其行为存在一些差异。
-让我们看一个名为 math.js 的模块示例，其中包含数学函数。
-function add(x, y) { return x + y; } function multiply(x) { return x * 2; } function subtract(x, y) { return x - y; } function square(x) { return x * x; } 函数允许用户进行加法、乘法、减法以及获取他们传递的值的平方。
-但是，我们不仅仅想在 math.js 文件中使用这些函数，我们希望能够在 index.js 文件中引用它们。但是直接在 index.js 文件内调用会抛出错误： index.js 文件中没有名为 add 、 subtract 、 multiply 或 square 。
-为了使 math.js 中的函数可用于其他文件，我们首先必须将它们导出。为了从模块导出代码，我们可以使用 export 关键字。导出函数的一种方法是使用命名导出：我们只需在可公开的部分前面添加 export 关键字。在这种情况下，我们需要在每个函数前面添加 export 关键字，因为 index.</description>
     </item>
     
     <item>
@@ -127,34 +154,6 @@ function createCounter(n: number): () =&amp;gt; number { return function() { ret
 https://leetcode.com/problems/counter/editorial/
 DAY3: Counter II 题目说明： 实现函数 createCounter，可以传一个初始值参数，返回包含三个函数的对象，三个函数分别是 increment()、decrement()、reset()。
 解题思路： increment()、decrement() 都是返回计算过后的值，变量要放在运算符的后面。reset() 重置初始值，需要额外用变量储存当前计算值，保留初始值 init。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://annachengdesu.github.io/post/patterns/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://annachengdesu.github.io/post/patterns/summary/</guid>
-      <description>设计模式汇总及学习心得总结 ​ 设计模式是针对软件设计中反复出现的问题所提出的通用解决方案。它们是在大量实际软件开发经验中总结出的优秀设计实践，描述了在特定场景下解决问题的方法和思路。设计模式旨在提高代码的可复用性、可扩展性和可维护性，使软件具有更好的灵活性和稳定性。因此学习设计模式对于个人代码水平提升十分重要。
-设计模式的重要性主要体现在以下几个方面：
-高效解决问题：设计模式为软件设计中常见问题提供了成熟、可靠的解决方案，使开发者能够更高效地解决问题，避免重复发明轮子。 促进代码复用：设计模式是通用的设计结构，可以在不同的场景和项目中复用，提高了代码的可复用性，减少了开发时间和成本。 提高代码质量：设计模式强调模块间的低耦合、高内聚，有助于提高代码的可读性、可维护性和稳定性，降低了软件的错误率。 促进团队协作：设计模式提供了一套通用的设计语言，使得团队成员在交流和理解代码时能够更加顺畅，提高了团队协作效率。 有益于个人成长：学习和熟练运用设计模式有助于提高开发者的设计能力和编程水平，使得开发者能够在面对复杂问题时更加从容应对。 设计模式主要分为三大类：
-创建型模式（Creational Patterns）：关注对象的创建过程，如工厂模式、单例模式、原型模式和建造者模式。 结构型模式（Structural Patterns）：关注类和对象的组合，如适配器模式、桥接模式、装饰器模式、组合模式、外观模式、享元模式和代理模式。 行为型模式（Behavioral Patterns）：关注对象间的通信，如责任链模式、命令模式、解释器模式、迭代器模式、中介者模式、备忘录模式、观察者模式、状态模式、策略模式、模板方法模式和访问者模式。 需要注意的是，设计模式并非万能的，它们只是解决特定问题的方法和思路。在实际开发中，应根据具体需求和场景选择合适的设计模式，并且不要过度追求设计模式，以免引入不必要的复杂性。
-Vanilla篇 Command pattern 命令模式
-命令模式是将方法（命令）从执行操作的对象中解耦，可以到特定时间或特定生命周期再执行命令。
-Factory pattern 工厂模式
-工厂模式是函数不通过使用 new 关键字来返回一个新对象。
-Mediator/middleware pattern 中间件模式
-中间件模式使得组件可以通过一个中心点（中介者）相互交互。中间件接收请求并将其转发，使我们能够轻松简化对象之间的多对多关系。
-Observer pattern 观察者模式
-通过观察者模式，可以将某些对象（observers观察者）订阅到另一个的对象（observable可观察对象)。每当事件发生时，可观察者都会通知其所有观察者。
-Minin pattern 混合模式
-Mixins 允许我们通过将功能注入到对象的原型中，轻松地向对象添加功能，而无需继承。（不推荐使用）
-Singleton pattern 单例模式
-实现单例模式是实现只能实例化一次并可以全局访问的类。
-Prototype pattern 原型模式
-原型模式是通过原型链继承的方式使得相同类型的的对象之间共享属性。
-Module Pattern 模块模式
-通过ES Module来防止名称冲突和全局范围污染。导出用export，导入用import module from path 。</description>
     </item>
     
     <item>

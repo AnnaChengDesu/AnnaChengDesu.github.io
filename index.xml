@@ -13,14 +13,13 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Oct 2023 23:09:38 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>设计模式汇总及学习心得总结</title>
+      <title>设计模式汇总及学习心得总结(Updating...)</title>
       <link>https://annachengdesu.github.io/post/patterns/summary/</link>
       <pubDate>Thu, 05 Oct 2023 23:09:38 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/summary/</guid>
-      <description>设计模式汇总及学习心得总结 ​ 设计模式是针对软件设计中反复出现的问题所提出的通用解决方案。它们是在大量实际软件开发经验中总结出的优秀设计实践，描述了在特定场景下解决问题的方法和思路。设计模式旨在提高代码的可复用性、可扩展性和可维护性，使软件具有更好的灵活性和稳定性。因此学习设计模式对于个人代码水平提升十分重要。
-设计模式的重要性主要体现在以下几个方面：
-高效解决问题：设计模式为软件设计中常见问题提供了成熟、可靠的解决方案，使开发者能够更高效地解决问题，避免重复发明轮子。 促进代码复用：设计模式是通用的设计结构，可以在不同的场景和项目中复用，提高了代码的可复用性，减少了开发时间和成本。 提高代码质量：设计模式强调模块间的低耦合、高内聚，有助于提高代码的可读性、可维护性和稳定性，降低了软件的错误率。 促进团队协作：设计模式提供了一套通用的设计语言，使得团队成员在交流和理解代码时能够更加顺畅，提高了团队协作效率。 有益于个人成长：学习和熟练运用设计模式有助于提高开发者的设计能力和编程水平，使得开发者能够在面对复杂问题时更加从容应对。 以下为模式学习笔记汇总：
+      <description>设计模式是针对软件设计中反复出现的问题所提出的通用解决方案。它们是在大量实际软件开发经验中总结出的优秀设计实践，描述了在特定场景下解决问题的方法和思路。设计模式旨在提高代码的可复用性、可扩展性和可维护性，使软件具有更好的灵活性和稳定性。因此学习设计模式对于个人代码水平提升十分重要。
+以下为模式学习笔记汇总：
 Vanilla 篇 Command pattern 命令模式
 命令模式是将方法（命令）从执行操作的对象中解耦，可以到特定时间或特定生命周期再执行命令。
 Factory pattern 工厂模式
@@ -40,12 +39,24 @@ Module Pattern 模块模式
     </item>
     
     <item>
-      <title>08-Module Pattern-设计模式学习-vanilla篇</title>
+      <title>09-Provider Pattern 提供者模式-vanilla篇</title>
+      <link>https://annachengdesu.github.io/post/patterns/provider/</link>
+      <pubDate>Sun, 20 Aug 2023 20:06:34 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/patterns/provider/</guid>
+      <description>在某些情况下，我们希望为应用程序中的许多（如果不是全部）组件提供可用数据。尽管可以使用 props 将数据传递给组件，但如果应用程序中几乎所有组件都需要访问 props 的值，那么这可能很难做到。
+我们经常会遇到一种称为“ prop drilling”的情况，将props传递到组件树的深处时，就会出现这种情况。重构依赖于 props 的代码几乎是不可能的，并且知道某些数据来自哪里也很困难。
+假设有一个包含某些 data 的 App 组件。在组件树的最深处，有一个 ListItem 、 Header 和 Text 组件，它们都需要来自 App 的data。为了将这些数据传递给这些组件，必须将其传递给多层组件。
+function App() { const data = { ... } return ( &amp;lt;div&amp;gt; &amp;lt;SideBar data={data} /&amp;gt; &amp;lt;Content data={data} /&amp;gt; &amp;lt;/div&amp;gt; ) } const SideBar = ({ data }) =&amp;gt; &amp;lt;List data={data} /&amp;gt; const List = ({ data }) =&amp;gt; &amp;lt;ListItem data={data} /&amp;gt; const ListItem = ({ data }) =&amp;gt; &amp;lt;span&amp;gt;{data.</description>
+    </item>
+    
+    <item>
+      <title>08-Module Pattern 模块模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/module/</link>
       <pubDate>Fri, 18 Aug 2023 17:34:08 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/module/</guid>
-      <description>Module Pattern 模块模式 随着应用程序和代码库的增长，保持代码的可维护性和独立性变得越来越重要。模块模式使得代码分割成更小的、可重用的部分。
+      <description>随着应用程序和代码库的增长，保持代码的可维护性和独立性变得越来越重要。模块模式使得代码分割成更小的、可重用的部分。
 除了此之外，模块还允许您将文件中的某些值保持为私有。默认情况下，模块内的声明的范围到该模块。如果我们不显式导出某个值，则该值在该模块之外不可用。这降低了代码库其他部分中声明的值发生名称冲突的风险，因为这些值在全局范围内不可用。
 ES2015 Modules ES2015 引入了内置 JavaScript 模块。模块是包含 JavaScript 代码的文件，与普通脚本相比，其行为存在一些差异。
 让我们看一个名为 math.js 的模块示例，其中包含数学函数。
@@ -55,12 +66,12 @@ function add(x, y) { return x + y; } function multiply(x) { return x * 2; } func
     </item>
     
     <item>
-      <title>07-Prototype Pattern-设计模式学习-vanilla篇</title>
+      <title>07-Prototype Pattern 原型模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/prototype/</link>
       <pubDate>Mon, 14 Aug 2023 20:06:34 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/prototype/</guid>
-      <description>Prototype Pattern 原型模式 原型模式是在同一类型的许多对象之间共享属性的有用方法。原型是 JavaScript 原生的对象，可以通过原型链被对象访问。
+      <description>原型模式是在同一类型的许多对象之间共享属性的有用方法。原型是 JavaScript 原生的对象，可以通过原型链被对象访问。
 在我们的应用程序中，我们经常需要创建许多相同类型的对象。想要达到此目的可以通过 ES6 类创建多个实例。
 假设我们想创造很多狗，他们有一个名字，并且它们可以吠叫。
 class Dog { constructor(name) { this.name = name; } bark() { return `Woof!`; } } const dog1 = new Dog(&amp;#34;Daisy&amp;#34;); const dog2 = new Dog(&amp;#34;Max&amp;#34;); const dog3 = new Dog(&amp;#34;Spot&amp;#34;); 请注意这里 constructor 如何包含 name 属性，并且类本身如何包含 bark 属性。使用 ES6 类时，类本身定义的所有属性（在本例中为 bark ）都会自动添加到 prototype 中。
@@ -69,24 +80,24 @@ console.log(Dog.prototype); // constructor: ƒ Dog(name, breed) bark: ƒ bark() 
     </item>
     
     <item>
-      <title>06-Singleton Pattern-设计模式学习-vanilla篇</title>
+      <title>06-Singleton Pattern 单例模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/singleton/</link>
       <pubDate>Sat, 12 Aug 2023 12:05:59 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/singleton/</guid>
-      <description>Singleton Pattern 单例模式 单例是可以实例化一次并可以全局访问的类。单一实例可以在我们的应用程序中共享，这使得单例非常适合管理应用程序中的全局状态。
+      <description>单例是可以实例化一次并可以全局访问的类。单一实例可以在我们的应用程序中共享，这使得单例非常适合管理应用程序中的全局状态。
 首先，看一下使用 ES2015 类的单例是什么样子。对于这个例子，我们将构建一个 Counter 类，它具有：
 返回实例值的 getInstance 方法 返回 counter 变量当前值的 getCount 方法 将 counter 的值增加 1 的 increment 方法 将 counter 的值减一的 decrement 方法 let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } 然而，这个类不符合 Singleton 的标准。 Singleton 应该只能被实例化一次。目前，我们可以创建 Counter 类的多个实例。
 let counter = 0; class Counter { getInstance() { return this; } getCount() { return counter; } increment() { return ++counter; } decrement() { return --counter; } } const counter1 = new Counter(); const counter2 = new Counter(); console.</description>
     </item>
     
     <item>
-      <title>05-Observer Pattern-设计模式学习-vanilla篇</title>
+      <title>05-Observer Pattern 观察者模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/observer-pattern/</link>
       <pubDate>Sat, 05 Aug 2023 21:13:09 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/observer-pattern/</guid>
-      <description>Observer Pattern 观察者模式 通过观察者模式，我们可以将某些对象（观察者）订阅到另一个称为可观察对象的对象。每当事件发生时，可观察者都会通知其所有观察者。
+      <description>通过观察者模式，我们可以将某些对象（观察者）订阅到另一个称为可观察对象的对象。每当事件发生时，可观察者都会通知其所有观察者。
 一个可观察对象通常包含 3 个重要部分：
 observers ：观察者数组，每当特定事件发生时都会收到通知
 subscribe() ：将观察者添加到观察者列表的方法
@@ -95,29 +106,29 @@ notify() ：每当特定事件发生时通知所有观察者的方法
 创建一个简单的方法是使用 ES6 类。
 class Observable { constructor() { this.observers = []; } subscribe(func) { this.observers.push(func); } unsubscribe(func) { this.observers = this.observers.filter((observer) =&amp;gt; observer !== func); } notify(data) { this.observers.forEach((observer) =&amp;gt; observer(data)); } } 我们现在可以使用 subscribe 方法将观察者添加到观察者列表中，使用 unsubscribe 方法删除观察者，并使用 notify 方法通知所有订阅者。
 现在我们有一个非常基本的应用程序，仅包含两个组件： Button 和 Switch 。
-export default function App() { return ( &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;Button&amp;gt;Click me!</description>
+export default function App() { return ( &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;Button&amp;gt;Click me!&amp;lt;/Button&amp;gt; &amp;lt;FormControlLabel control={&amp;lt;Switch /&amp;gt;} /&amp;gt; &amp;lt;/div&amp;gt; ); } 我们希望跟踪用户与应用程序的交互。每当用户单击按钮或切换开关时，我们都希望使用时间戳记录此事件。除了记录之外，我们还想创建一个 Toast 通知，每当事件发生时就会显示。</description>
     </item>
     
     <item>
-      <title>04-Mixin Pattern-设计模式学习-vanilla篇</title>
+      <title>04-Mixin Pattern 混合模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
       <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/minin-pattern/</guid>
-      <description>Mixin Pattern 混合模式 mixin 是一个对象，我们可以使用它向另一个对象或类添加可重用的功能，而无需使用继承。我们不能单独使用 mixin：它们的唯一目的是在没有继承的情况下向对象或类添加功能。
+      <description>mixin 是一个对象，我们可以使用它向另一个对象或类添加可重用的功能，而无需使用继承。我们不能单独使用 mixin：它们的唯一目的是在没有继承的情况下向对象或类添加功能。
 假设我们的应用程序需要创建多只狗。然而，我们创建的基本狗除了 name 属性之外没有任何属性。
 class Dog { constructor(name) { this.name = name; } } 狗应该能够做的不仅仅是有名字。它应该能够吠叫、摇尾巴和玩耍！我们可以创建一个 mixin 来为我们提供 bark 、 wagTail 和 play 属性，而不是直接将其添加到 Dog 中。
 const dogFunctionality = { bark: () =&amp;gt; console.log(&amp;#34;Woof!&amp;#34;), wagTail: () =&amp;gt; console.log(&amp;#34;Wagging my tail!&amp;#34;), play: () =&amp;gt; console.log(&amp;#34;Playing!&amp;#34;), }; 我们可以使用 Object.assign 方法将 dogFunctionality mixin 添加到 Dog 原型中。此方法允许我们向目标对象添加属性：在本例中为 Dog.prototype 。 Dog 的每个新实例都可以访问 dogFunctionality 的属性，因为它们被添加到 Dog 的原型中。
-class Dog { constructor(name) { this.</description>
+class Dog { constructor(name) { this.name = name; } } const dogFunctionality = { bark: () =&amp;gt; console.</description>
     </item>
     
     <item>
-      <title>03-Mediator/Middleware Pattern-设计模式学习-vanilla篇</title>
+      <title>03-Mediator/Middleware Pattern 中介者/中间件模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/mediator-pattern/</link>
       <pubDate>Wed, 02 Aug 2023 19:46:32 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/mediator-pattern/</guid>
-      <description>Mediator/Middleware Pattern 中介者/中间件模式 中介者模式使组件可以通过一个中心点（中介者）相互交互。中介者不是直接相互交谈，而是接收请求并将其转发。在 JavaScript 中，中介者通常只不过是一个对象文字或一个函数。
+      <description>中介者模式使组件可以通过一个中心点（中介者）相互交互。中介者不是直接相互交谈，而是接收请求并将其转发。在 JavaScript 中，中介者通常只不过是一个对象文字或一个函数。
 可以将此模式与空中交通管制员和飞行员之间的关系进行比较。飞行员之间不会直接相互交谈（这可能会导致混乱），而是与空中交通管制员交谈。空中交通管制员确保所有飞机都能收到安全飞行所需的信息，而不会撞到其他飞机。
 在 Javascript 中，我们经常需要处理对象之间的多向数据。项目中如果有大量组件，组件之间的通信很可能会变得相当混乱。
 对象的请求由中介处理，而不是让每个对象直接与其他对象对话，从而形成多对多关系。中介器处理该请求，并将其转发到需要的位置。
@@ -127,12 +138,12 @@ const chatroom = new ChatRoom(); const user1 = new User(&amp;#34;John Doe&amp;#3
     </item>
     
     <item>
-      <title>01-Command Pattern-设计模式学习-vanilla篇</title>
+      <title>01-Command Pattern 命令模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/command-pattern/</link>
       <pubDate>Wed, 12 Jul 2023 21:21:32 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/command-pattern/</guid>
-      <description>Command Pattern 命令模式 使用命令模式，可以将执行某个任务的对象与调用该方法的对象解耦。
+      <description>使用命令模式，可以将执行某个任务的对象与调用该方法的对象解耦。
 假设有一个外卖配送平台。用户可以下单、跟踪和取消订单。
 class OrderManager() { constructor() { this.orders = [] } placeOrder(order, id) { this.orders.push(id) return `You have successfully ordered ${order} (${id})`; } trackOrder(id) { return `Your order ${id} will arrive in 20 minutes.` } cancelOrder(id) { this.orders = this.orders.filter(order =&amp;gt; order.id !== id) return `You have canceled your order ${id}` } } 在 OrderManager 类上，可以访问 placeOrder 、 trackOrder 和 cancelOrder 方法。直接使用这些方法将是完全可行的。
 但是，直接在 manager 实例上调用方法也有缺点。我们可能会决定稍后重命名某些方法，或者改变某些方法的功能。
@@ -157,12 +168,12 @@ DAY3: Counter II 题目说明： 实现函数 createCounter，可以传一个初
     </item>
     
     <item>
-      <title>02-Factory Pattern-设计模式学习-vanilla篇</title>
+      <title>02-Factory Pattern 工厂模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/factory-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://annachengdesu.github.io/post/patterns/factory-pattern/</guid>
-      <description>Factory Pattern 工厂模式 通过工厂模式，我们可以使用工厂函数来创建新对象。当一个函数不使用 new 关键字来返回一个新对象时，它就是一个工厂函数。
+      <description>通过工厂模式，我们可以使用工厂函数来创建新对象。当一个函数不使用 new 关键字来返回一个新对象时，它就是一个工厂函数。
 假设我们的应用程序需要许多用户。我们可以使用 firstName 、 lastName 和 email 属性创建新用户。工厂函数还将 fullName 属性添加到新创建的对象中，该属性返回 firstName 和 lastName 。
 const createUser = ({ firstName, lastName, email }) =&amp;gt; ({ firstName, lastName, email, fullName() { return `${this.firstName} ${this.lastName}`; }, }); 现在我们可以通过调用 createUser 函数轻松创建多个用户。
 const user1 = createUser({ firstName: &amp;#34;Anna&amp;#34;, lastName: &amp;#34;Cheng&amp;#34;, email: &amp;#34;AnnaCheng@gmail.com&amp;#34;, }); 如果我们要创建相对复杂且可配置的对象，工厂模式会很有用。键和值的值可能取决于特定的环境或配置。使用工厂模式，我们可以轻松创建包含自定义键和值的新对象。

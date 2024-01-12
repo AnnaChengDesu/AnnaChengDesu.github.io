@@ -35,7 +35,9 @@ Singleton pattern 单例模式
 Prototype pattern 原型模式
 原型模式是通过原型链继承的方式使得相同类型的的对象之间共享属性。
 Module Pattern 模块模式
-通过 ES Module 来防止名称冲突和全局范围污染。导出用 export，导入用 import module from path 。</description>
+通过 ES Module 来防止名称冲突和全局范围污染。导出用 export，导入用 import module from path 。
+Provider Pattern 提供者模式
+Provider 模式无需通过手动给每个组件层传递数据，使得将数据传递到许多组件。</description>
     </item>
     
     <item>

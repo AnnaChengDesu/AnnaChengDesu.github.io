@@ -14,10 +14,10 @@
     <lastBuildDate>Fri, 04 Aug 2023 19:46:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/mixin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>04-Mixin Pattern 混合模式-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/minin-pattern/</link>
+      <link>https://annachengdesu.github.io/post/patterns/minin/</link>
       <pubDate>Fri, 04 Aug 2023 19:46:32 +0800</pubDate>
       
-      <guid>https://annachengdesu.github.io/post/patterns/minin-pattern/</guid>
+      <guid>https://annachengdesu.github.io/post/patterns/minin/</guid>
       <description>mixin 是一个对象，我们可以使用它向另一个对象或类添加可重用的功能，而无需使用继承。我们不能单独使用 mixin：它们的唯一目的是在没有继承的情况下向对象或类添加功能。
 假设我们的应用程序需要创建多只狗。然而，我们创建的基本狗除了 name 属性之外没有任何属性。
 class Dog { constructor(name) { this.name = name; } } 狗应该能够做的不仅仅是有名字。它应该能够吠叫、摇尾巴和玩耍！我们可以创建一个 mixin 来为我们提供 bark 、 wagTail 和 play 属性，而不是直接将其添加到 Dog 中。

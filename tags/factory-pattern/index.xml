@@ -13,10 +13,10 @@
     <language>en-us</language><atom:link href="https://annachengdesu.github.io/tags/factory-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>02-Factory Pattern 工厂模式-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/factory-pattern/</link>
+      <link>https://annachengdesu.github.io/post/patterns/factory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://annachengdesu.github.io/post/patterns/factory-pattern/</guid>
+      <guid>https://annachengdesu.github.io/post/patterns/factory/</guid>
       <description>通过工厂模式，我们可以使用工厂函数来创建新对象。当一个函数不使用 new 关键字来返回一个新对象时，它就是一个工厂函数。
 假设我们的应用程序需要许多用户。我们可以使用 firstName 、 lastName 和 email 属性创建新用户。工厂函数还将 fullName 属性添加到新创建的对象中，该属性返回 firstName 和 lastName 。
 const createUser = ({ firstName, lastName, email }) =&amp;gt; ({ firstName, lastName, email, fullName() { return `${this.firstName} ${this.lastName}`; }, }); 现在我们可以通过调用 createUser 函数轻松创建多个用户。

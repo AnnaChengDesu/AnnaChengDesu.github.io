@@ -14,10 +14,10 @@
     <lastBuildDate>Wed, 02 Aug 2023 19:46:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/middleware-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>03-Mediator/Middleware Pattern 中介者/中间件模式-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/mediator-pattern/</link>
+      <link>https://annachengdesu.github.io/post/patterns/mediator/</link>
       <pubDate>Wed, 02 Aug 2023 19:46:32 +0800</pubDate>
       
-      <guid>https://annachengdesu.github.io/post/patterns/mediator-pattern/</guid>
+      <guid>https://annachengdesu.github.io/post/patterns/mediator/</guid>
       <description>中介者模式使组件可以通过一个中心点（中介者）相互交互。中介者不是直接相互交谈，而是接收请求并将其转发。在 JavaScript 中，中介者通常只不过是一个对象文字或一个函数。
 可以将此模式与空中交通管制员和飞行员之间的关系进行比较。飞行员之间不会直接相互交谈（这可能会导致混乱），而是与空中交通管制员交谈。空中交通管制员确保所有飞机都能收到安全飞行所需的信息，而不会撞到其他飞机。
 在 Javascript 中，我们经常需要处理对象之间的多向数据。项目中如果有大量组件，组件之间的通信很可能会变得相当混乱。

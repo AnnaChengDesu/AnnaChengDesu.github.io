@@ -14,10 +14,10 @@
     <lastBuildDate>Wed, 12 Jul 2023 21:21:32 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/command-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>01-Command Pattern 命令模式-vanilla篇</title>
-      <link>https://annachengdesu.github.io/post/patterns/command-pattern/</link>
+      <link>https://annachengdesu.github.io/post/patterns/command/</link>
       <pubDate>Wed, 12 Jul 2023 21:21:32 +0800</pubDate>
       
-      <guid>https://annachengdesu.github.io/post/patterns/command-pattern/</guid>
+      <guid>https://annachengdesu.github.io/post/patterns/command/</guid>
       <description>使用命令模式，可以将执行某个任务的对象与调用该方法的对象解耦。
 假设有一个外卖配送平台。用户可以下单、跟踪和取消订单。
 class OrderManager() { constructor() { this.orders = [] } placeOrder(order, id) { this.orders.push(id) return `You have successfully ordered ${order} (${id})`; } trackOrder(id) { return `Your order ${id} will arrive in 20 minutes.` } cancelOrder(id) { this.orders = this.orders.filter(order =&amp;gt; order.id !== id) return `You have canceled your order ${id}` } } 在 OrderManager 类上，可以访问 placeOrder 、 trackOrder 和 cancelOrder 方法。直接使用这些方法将是完全可行的。

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Problem solved on Anna.me</title>
+    <link>https://annachengdesu.github.io/categories/problem-solved/</link>
+    <description>Recent content in Problem solved on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jan 2024 22:46:12 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/categories/problem-solved/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github报错：ssh: connect to host github.com port 22: Connection refused</title>
+      <link>https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/</link>
+      <pubDate>Sun, 14 Jan 2024 22:46:12 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/</guid>
+      <description>问题现象 ​ 本文以 Windows 系统为例进行说明。
+​ 在更换网络环境后，在个人电脑上使用 git push 命令推动代码至 Github 报错。
+ssh: connect to host github.com port 22: Connection refusedfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists. 排查过程 ​ 报错提示的是连接 github.com 的 22 端口被拒绝了。遂使用浏览器访问 github.com，确实无法访问，开梯子后网页访问正常，但 git push 依旧失败。
+使用 Github 的 443 端口 ​ 网上搜索后发现可能是 22 端口被防火墙屏蔽了，可以尝试连接 Github 的 443 端口。
+​ 命令 ssh -T git@github.com 可以检测和 Github 的网络通信是否正常，执行后报错 连接超时。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -11,7 +11,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Oct 2023 23:09:38 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 22:46:12 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github报错：ssh: connect to host github.com port 22: Connection refused</title>
+      <link>https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/</link>
+      <pubDate>Sun, 14 Jan 2024 22:46:12 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/</guid>
+      <description>问题现象 ​ 本文以 Windows 系统为例进行说明。
+​ 在更换网络环境后，在个人电脑上使用 git push 命令推动代码至 Github 报错。
+ssh: connect to host github.com port 22: Connection refusedfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists. 排查过程 ​ 报错提示的是连接 github.com 的 22 端口被拒绝了。遂使用浏览器访问 github.com，确实无法访问，开梯子后网页访问正常，但 git push 依旧失败。
+使用 Github 的 443 端口 ​ 网上搜索后发现可能是 22 端口被防火墙屏蔽了，可以尝试连接 Github 的 443 端口。
+​ 命令 ssh -T git@github.com 可以检测和 Github 的网络通信是否正常，执行后报错 连接超时。</description>
+    </item>
+    
     <item>
       <title>设计模式汇总及学习心得总结(Updating...)</title>
       <link>https://annachengdesu.github.io/post/patterns/summary/</link>

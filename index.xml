@@ -183,6 +183,19 @@ DAY3: Counter II 题目说明： 实现函数 createCounter，可以传一个初
     </item>
     
     <item>
+      <title>一次弄懂防抖和节流的区别</title>
+      <link>https://annachengdesu.github.io/post/javascript/debounce-and-throttle/</link>
+      <pubDate>Tue, 10 Jan 2023 20:11:25 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/javascript/debounce-and-throttle/</guid>
+      <description>防抖 防抖函数原理：把触发非常频繁的事件合并成一次去执行 在指定时间内只执行一次回调函数，如果在指定的时间内又触发了该事件，则回调函数的执行时间会基于此刻重新开始计算
+简易手写版： // func是用户传入需要防抖的函数 // wait是等待时间 const debounce = (func, wait) =&amp;gt; { let timer = undefined; // 这里返回的函数是每次用户实际调用的防抖函数 // 如果已经设定过定时器了就清空上一次的定时器 // 开始一个新的定时器，延迟执行用户传入的方法 return function (...args) { if (timer) clearTimeout(timer); timer = setTimeout(() =&amp;gt; { func.apply(this, args); }, wait); }; }; 适用场景：
+文本输入的验证，连续输入文字后发送 AJAX 请求进行验证，验证一次就好 按钮提交场景：防止多次提交按钮，只执行最后提交的一次 服务端验证场景：表单验证需要服务端配合，只执行一段连续的输入事件的最后一次，还有搜索联想词功能类似 节流 节流函数原理:指频繁触发事件时，只会在指定的时间段内执行事件回调，即触发事件间隔大于等于指定的时间才会执行回调函数。总结起来就是：事件按照一段时间的间隔来进行触发。
+简易手写版： 时间戳实现
+const throttle = (func, wait = 50) =&amp;gt; { let lastTime = 0; return function (...args) { let now = Date.</description>
+    </item>
+    
+    <item>
       <title>02-Factory Pattern 工厂模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/factory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

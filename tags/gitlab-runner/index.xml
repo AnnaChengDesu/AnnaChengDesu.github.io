@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gitlab Runner on Anna.me</title>
+    <link>https://annachengdesu.github.io/tags/gitlab-runner/</link>
+    <description>Recent content in Gitlab Runner on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Jul 2023 19:26:51 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/gitlab-runner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI Runner并行处理job有概率出现报错内容缺失或出包内容错误</title>
+      <link>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</link>
+      <pubDate>Fri, 14 Jul 2023 19:26:51 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</guid>
+      <description>问题描述：
+前端仓库的 CI Runner 并行处理两个 job 有概率出现报错内容缺失或出包内容错误。
+问题分析：
+​ Gitlab 官方称：当只有一个 runner 在运行并且每个[[runner]] section 都有独立的 build 路径，concurrent 是生效的。若有多个 runner 使用同个 config.toml 文件或共享同个 build 路径，即使设置了 concurrent 为 1，也还是会有概率出现一个 runner 并发处理多个 job 的问题，官方认为这是用户的错误配置。config.toml 文件允许存在多个[[runner]] section，但这个 bug 会导致 concurrent 失效。
+​ 根据上次 ci runner 出现打包内容错误的问题推测是当时 config.toml 配置上的失误，即多个 runner 使用同个 config.toml 文件并且没有指定 build_dir（默认对应于宿主机的目录是在宿主机 的 docker volume )，因此有概率出现一个 runner 同时处理两个 job 的情况(curcurrent 设置为 1)，再加上一个 runner 映射一个 volume，从 gitlab 上拉下的源代码都存储在同个 volume，后拉的替换先拉的，最终导致必有一个 job 打出的包有问题含有其他分支的内容或直接报错编译失败。
+​ Branch_3.5.3 出的 sp4 包内容含其他分支的内容也就同样能解释通了，从下图中可以看出两次 job 先后执行并且持续了一段时间，但使用的是同一台 runner、同一个 volume，由于 Branch_3.</description>
+    </item>
+    
+  </channel>
+</rss>

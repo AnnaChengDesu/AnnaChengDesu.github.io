@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>React on Anna.me</title>
+    <link>https://annachengdesu.github.io/categories/react/</link>
+    <description>Recent content in React on Anna.me</description>
+    <image>
+      <title>Anna.me</title>
+      <url>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://annachengdesu.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Jun 2023 16:32:13 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redux与Redux-Toolkit的实现对比</title>
+      <link>https://annachengdesu.github.io/post/react/redux/</link>
+      <pubDate>Sat, 10 Jun 2023 16:32:13 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/react/redux/</guid>
+      <description>Redux 基本概念与 API Store 就是保存数据的地方，你可以把它看成一个容器。整个应用只能有一个 Store。
+Store对象包含所有数据。如果想得到某个时点的数据，就要对 Store 生成快照。这种时点的数据集合，就叫做 State。
+State 的变化，会导致 View 的变化。但是，用户接触不到 State，只能接触到 View。所以，State 的变化必须是 View 导致的。Action 就是 View 发出的通知，表示 State 应该要发生变化了。
+Action 是一个对象。其中的type属性是必须的，表示 Action 的名称。
+Action 描述当前发生的事情。改变 State 的唯一办法，就是使用 Action。它会运送数据到 Store。
+Reducer 是一个函数，它接受 当前 State 和 Action 作为参数，返回一个新的 State。
+Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
+store 的三个方法 store.getState() // 获取当前 state store.dispatch() // 派发 action 至 reducer 处理 store.subscribe() // 订阅事件 state 变化即触发 示例代码 实现一个能够添加书籍，并能够根据书籍 ID 删除的功能。
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,22 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists. 排查过程 ​ 报错提示的是连接 github.com 的 22 端口被拒绝了。遂使用浏览器访问 github.com，确实无法访问，开梯子后网页访问正常，但 git push 依旧失败。
 使用 Github 的 443 端口 ​ 网上搜索后发现可能是 22 端口被防火墙屏蔽了，可以尝试连接 Github 的 443 端口。
-​ 命令 ssh -T git@github.com 可以检测和 Github 的网络通信是否正常，执行后报错 连接超时。...</p></div><footer class=entry-footer><span title='2024-01-14 22:46:12 +0800 CST'>January 14, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;199 words&nbsp;·&nbsp;Anna.me</footer><a class=entry-link aria-label="post link to Github报错：ssh: connect to host github.com port 22: Connection refused" href=https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://annachengdesu.github.io/>Anna.me</a></span>
+​ 命令 ssh -T git@github.com 可以检测和 Github 的网络通信是否正常，执行后报错 连接超时。...</p></div><footer class=entry-footer><span title='2024-01-14 22:46:12 +0800 CST'>January 14, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;199 words&nbsp;·&nbsp;Anna.me</footer><a class=entry-link aria-label="post link to Github报错：ssh: connect to host github.com port 22: Connection refused" href=https://annachengdesu.github.io/post/problem-solved/github-ssh-connection-refuse/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>记一次线上问题解决-访问页面刷新后报错 403 Forbidden</h2></header><div class=entry-content><p>线上问题描述： 香港某站点登陆后跳转 dashboard 页面，刷新页面后报错 403 Forbidden。
+问题定位： 前端目录文件下有命名为 dashboard 的文件夹，与路由重名 以下为 nginx 部分配置文件代码：
+location /entry {
+index entry.html
+}
+location / {
+...
+autoindex on;
+index index.html;
+try_files $uri $uri/ /index.html
+} 打开 autoindex，从下图可以得出命中了第二条$uri/规则，但该目录下没有 index.html，nginx 尝试检索目录但是被禁止，所以报错 403。
+为什么刷新后才报错？ 第一次请求是 xxx.com/，命中 index.html，VueRouter 在 history 模式下，login 成功后，借助 history.pushState 实现页面的无刷新跳转到了 /，这种方式改变了 url，之后再根据判断权限点通过 redirect 跳转到对应的页面。如果重新刷新页面会造成一个新的 http 请求，因此会重新请求服务器，如果 nginx 没有匹配到当前 url，就会出现报错页面。
+xxx.com/dashboard，按照 try_files 匹配顺序走到了$uri/，而目录中正好命中了 dashboard 文件夹，然而其中没有 index.html，nginx 尝试检索目录但是被禁止，于是报错 403 Forbidden。
+为什么测试环境没有报错？ 测试环境的 nginx 配置文件代码为：
+location / {
+....</p></div><footer class=entry-footer><span title='2023-06-03 22:46:12 +0800 CST'>June 3, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;92 words&nbsp;·&nbsp;Anna.me</footer><a class=entry-link aria-label="post link to 记一次线上问题解决-访问页面刷新后报错 403 Forbidden" href=https://annachengdesu.github.io/post/problem-solved/vue-router-history-fix/></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://annachengdesu.github.io/>Anna.me</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -26,6 +26,20 @@ ssh: connect to host github.com port 22: Connection refusedfatal: Could not rea
     </item>
     
     <item>
+      <title>CI Runner并行处理job有概率出现报错内容缺失或出包内容错误</title>
+      <link>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</link>
+      <pubDate>Sat, 14 Oct 2023 19:26:51 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</guid>
+      <description>问题描述：
+前端仓库的 CI Runner 并行处理两个 job 有概率出现报错内容缺失或出包内容错误。
+问题分析：
+​ Gitlab 官方称：当只有一个 runner 在运行并且每个[[runner]] section 都有独立的 build 路径，concurrent 是生效的。若有多个 runner 使用同个 config.toml 文件或共享同个 build 路径，即使设置了 concurrent 为 1，也还是会有概率出现一个 runner 并发处理多个 job 的问题，官方认为这是用户的错误配置。config.toml 文件允许存在多个[[runner]] section，但这个 bug 会导致 concurrent 失效。
+​ 根据上次 ci runner 出现打包内容错误的问题推测是当时 config.toml 配置上的失误，即多个 runner 使用同个 config.toml 文件并且没有指定 build_dir（默认对应于宿主机的目录是在宿主机 的 docker volume )，因此有概率出现一个 runner 同时处理两个 job 的情况(curcurrent 设置为 1)，再加上一个 runner 映射一个 volume，从 gitlab 上拉下的源代码都存储在同个 volume，后拉的替换先拉的，最终导致必有一个 job 打出的包有问题含有其他分支的内容或直接报错编译失败。
+​ Branch_3.5.3 出的 sp4 包内容含其他分支的内容也就同样能解释通了，从下图中可以看出两次 job 先后执行并且持续了一段时间，但使用的是同一台 runner、同一个 volume，由于 Branch_3.</description>
+    </item>
+    
+    <item>
       <title>设计模式汇总及学习心得总结(Updating...)</title>
       <link>https://annachengdesu.github.io/post/patterns/summary/</link>
       <pubDate>Thu, 05 Oct 2023 23:09:38 +0800</pubDate>
@@ -162,20 +176,6 @@ const chatroom = new ChatRoom(); const user1 = new User(&amp;#34;John Doe&amp;#3
     </item>
     
     <item>
-      <title>CI Runner并行处理job有概率出现报错内容缺失或出包内容错误</title>
-      <link>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</link>
-      <pubDate>Fri, 14 Jul 2023 19:26:51 +0800</pubDate>
-      
-      <guid>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</guid>
-      <description>问题描述：
-前端仓库的 CI Runner 并行处理两个 job 有概率出现报错内容缺失或出包内容错误。
-问题分析：
-​ Gitlab 官方称：当只有一个 runner 在运行并且每个[[runner]] section 都有独立的 build 路径，concurrent 是生效的。若有多个 runner 使用同个 config.toml 文件或共享同个 build 路径，即使设置了 concurrent 为 1，也还是会有概率出现一个 runner 并发处理多个 job 的问题，官方认为这是用户的错误配置。config.toml 文件允许存在多个[[runner]] section，但这个 bug 会导致 concurrent 失效。
-​ 根据上次 ci runner 出现打包内容错误的问题推测是当时 config.toml 配置上的失误，即多个 runner 使用同个 config.toml 文件并且没有指定 build_dir（默认对应于宿主机的目录是在宿主机 的 docker volume )，因此有概率出现一个 runner 同时处理两个 job 的情况(curcurrent 设置为 1)，再加上一个 runner 映射一个 volume，从 gitlab 上拉下的源代码都存储在同个 volume，后拉的替换先拉的，最终导致必有一个 job 打出的包有问题含有其他分支的内容或直接报错编译失败。
-​ Branch_3.5.3 出的 sp4 包内容含其他分支的内容也就同样能解释通了，从下图中可以看出两次 job 先后执行并且持续了一段时间，但使用的是同一台 runner、同一个 volume，由于 Branch_3.</description>
-    </item>
-    
-    <item>
       <title>01-Command Pattern 命令模式-vanilla篇</title>
       <link>https://annachengdesu.github.io/post/patterns/command/</link>
       <pubDate>Wed, 12 Jul 2023 21:21:32 +0800</pubDate>
@@ -189,7 +189,7 @@ class OrderManager() { constructor() { this.orders = [] } placeOrder(order, id) 
     </item>
     
     <item>
-      <title>Redux与Redux-Toolkit的实现对比</title>
+      <title>Redux 与 Redux-Toolkit 的实现对比</title>
       <link>https://annachengdesu.github.io/post/react/redux/</link>
       <pubDate>Sat, 10 Jun 2023 16:32:13 +0800</pubDate>
       
@@ -203,6 +203,21 @@ Reducer 是一个函数，它接受 当前 State 和 Action 作为参数，返�
 Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
 store 的三个方法 store.getState() // 获取当前 state store.dispatch() // 派发 action 至 reducer 处理 store.subscribe() // 订阅事件 state 变化即触发 示例代码 实现一个能够添加书籍，并能够根据书籍 ID 删除的功能。
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.</description>
+    </item>
+    
+    <item>
+      <title>记一次线上问题解决-访问页面刷新后报错 403 Forbidden</title>
+      <link>https://annachengdesu.github.io/post/problem-solved/vue-router-history-fix/</link>
+      <pubDate>Sat, 03 Jun 2023 22:46:12 +0800</pubDate>
+      
+      <guid>https://annachengdesu.github.io/post/problem-solved/vue-router-history-fix/</guid>
+      <description>线上问题描述： 香港某站点登陆后跳转 dashboard 页面，刷新页面后报错 403 Forbidden。
+问题定位： 前端目录文件下有命名为 dashboard 的文件夹，与路由重名 以下为 nginx 部分配置文件代码：
+location /entry {index entry.html}location / {...autoindex on;index index.html;try_files $uri $uri/ /index.html} 打开 autoindex，从下图可以得出命中了第二条$uri/规则，但该目录下没有 index.html，nginx 尝试检索目录但是被禁止，所以报错 403。
+为什么刷新后才报错？ 第一次请求是 xxx.com/，命中 index.html，VueRouter 在 history 模式下，login 成功后，借助 history.pushState 实现页面的无刷新跳转到了 /，这种方式改变了 url，之后再根据判断权限点通过 redirect 跳转到对应的页面。如果重新刷新页面会造成一个新的 http 请求，因此会重新请求服务器，如果 nginx 没有匹配到当前 url，就会出现报错页面。
+xxx.com/dashboard，按照 try_files 匹配顺序走到了$uri/，而目录中正好命中了 dashboard 文件夹，然而其中没有 index.html，nginx 尝试检索目录但是被禁止，于是报错 403 Forbidden。
+为什么测试环境没有报错？ 测试环境的 nginx 配置文件代码为：
+location / {.</description>
     </item>
     
     <item>

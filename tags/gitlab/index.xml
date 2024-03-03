@@ -11,11 +11,11 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Jul 2023 19:26:51 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 19:26:51 +0800</lastBuildDate><atom:link href="https://annachengdesu.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CI Runner并行处理job有概率出现报错内容缺失或出包内容错误</title>
       <link>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</link>
-      <pubDate>Fri, 14 Jul 2023 19:26:51 +0800</pubDate>
+      <pubDate>Sat, 14 Oct 2023 19:26:51 +0800</pubDate>
       
       <guid>https://annachengdesu.github.io/post/problem-solved/gitlab-ci-cd/</guid>
       <description>问题描述：
